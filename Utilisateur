@@ -1,0 +1,52 @@
+package pokemon;
+
+import java.util.ArrayList;
+
+public class Utilisateur {
+	
+	
+	protected String nom;
+	protected String prenom;
+	protected int age;
+	protected ArrayList<Accessoire> accessoires;
+	protected ArrayList<Pokemon> pokemons;
+	protected String motDePasse;
+	protected String login;
+	protected int argent;
+	protected final static int MAJORITE=18;
+	
+	
+	//Contructeur complet
+	public Utilisateur(String nom, String prenom, int age,String login,String motDePasse, int argent, ArrayList<Accessoire> accessoires, ArrayList<Pokemon> pokemons){
+		this.nom=nom;
+		this.prenom=prenom;
+		this.age=age;
+		this.accessoires=accessoires;
+		this.pokemons=pokemons;
+		this.motDePasse=motDePasse;
+		this.login=login;
+		if(age<MAJORITE){
+			this.argent=0;
+		}
+		else{
+			this.argent=argent;
+		}
+	}
+	
+	//Constructeur sans les pokemons et accessoire
+	public Utilisateur(String nom, String prenom, int age, String login,String motDePasse,int argent){
+		new Utilisateur(nom, prenom , age,login,motDePasse,argent, new ArrayList<Accessoire>() , new ArrayList<Pokemon>());
+	}
+	
+	//constructeur sans les pokemons, accessoire et l'argent
+	public Utilisateur(String nom,String prenom,int age,String login,String motDePasse){
+		new Utilisateur(nom,prenom,age,login,motDePasse,0, new ArrayList<Accessoire>() , new ArrayList<Pokemon>());
+	}
+	
+	//Constructeur par défaut
+	public Utilisateur(){
+		new Utilisateur("","",0,"","",0);
+	}
+	
+	
+}
