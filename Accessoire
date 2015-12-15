@@ -1,8 +1,36 @@
 package pokemon;
+//sherfik
 
-public interface Accessoire {
+public class Pokemon {
 
-	public void effect();
-	j'aime les hommes
+	
+	protected String nom;
+	protected final static int NB_DE_TYPE=4;
+	protected final static String[] types ={"eau","feu","plante","spectre"};
+	protected int hp;
+	protected int tempsRegen;
+	protected int xp;
+	protected String type;
+	protected int[] degats;
+			
+
+	public boolean equals(Pokemon p){
+		if(p.getNom()==this.nom)
+			return true;
+		else
+			return false;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	
+	
 	
 }
+
