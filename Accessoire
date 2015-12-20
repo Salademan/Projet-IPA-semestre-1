@@ -1,36 +1,43 @@
 package pokemon;
-//sherfik
 
-public class Pokemon {
+public abstract class Accessoire {
 
 	
-	protected String nom;
-	protected final static int NB_DE_TYPE=4;
-	protected final static String[] types ={"eau","feu","plante","spectre"};
-	protected int hp;
-	protected int tempsRegen;
-	protected int xp;
-	protected String type;
-	protected int[] degats;
-			
-
-	public boolean equals(Pokemon p){
-		if(p.getNom()==this.nom)
-			return true;
-		else
-			return false;
-	}
-
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
+	int valeurMonetaire;
+	boolean consomable;
+	boolean utilisableEnCombat;
+	
+	public Accessoire(int valeur, boolean consomable,boolean utilisableEnCombat){
+		this.valeurMonetaire=valeur;
+		this.consomable=consomable;
+		this.utilisableEnCombat=utilisableEnCombat;
 	}
 	
-	
+	protected boolean isUtilisableEnCombat() {
+		return utilisableEnCombat;
+	}
+
+	protected void setUtilisableEnCombat(boolean utilisableEnCombat) {
+		this.utilisableEnCombat = utilisableEnCombat;
+	}
+
+	public abstract void effet(Pokemon p);
+
+	protected int getValeurMonetaire() {
+		return valeurMonetaire;
+	}
+
+	protected void setValeurMonetaire(int valeurMonetaire) {
+		this.valeurMonetaire = valeurMonetaire;
+	}
+
+	protected boolean isConsomable() {
+		return consomable;
+	}
+
+	protected void setConsomable(boolean consomable) {
+		this.consomable = consomable;
+	}
 	
 	
 }
-
