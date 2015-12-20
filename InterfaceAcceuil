@@ -1,0 +1,74 @@
+package pokemon;
+
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+public class InterfaceAcceuil {
+
+	protected JFrame frame;
+	
+	public InterfaceAcceuil(){
+		makeFrame();
+	}
+	
+	public void makeFrame(){
+		
+		
+		this.frame=new JFrame("Acceuil");
+		InterfaceAcceuil.normalizeFrame(frame, 500);
+		Container contentPane = frame.getContentPane();
+		contentPane.setLayout(new GridLayout(2,1));
+		Container container1 = new Container();
+		container1.setLayout(new FlowLayout());
+		Container container2 = new Container();
+		container2.setLayout(new FlowLayout());
+		contentPane.add(container1);
+		contentPane.add(container2);
+		
+		// login,mot de passe et lancement de partie
+		
+		JTextField login = new JTextField("login");
+		JTextField motDePasse = new JTextField("mot de passe");
+		JButton ok = new JButton("OK");
+		ok.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO En attente de la classe GestionnaireUtilisateur
+				
+			}
+		});
+		container1.add(login);
+		container1.add(motDePasse);
+		container1.add(ok);
+		
+		
+		
+		//le boutton créer compte
+		JButton creeCompte = new JButton("Crée un compte");
+		creeCompte.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				frame.setVisible(false);
+				JFrame newframe =new InterfaceCreeCompte();
+			}
+		});
+		container2.add(creeCompte);
+		
+	}
+
+	
+	protected static void normalizeFrame(JFrame f, int size){
+		f.setVisible(true);
+		f.setSize(size, size);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+}
