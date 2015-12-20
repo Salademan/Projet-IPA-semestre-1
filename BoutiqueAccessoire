@@ -1,0 +1,41 @@
+package pokemon;
+
+import java.util.ArrayList;
+
+public class BoutiqueAccessoire {
+
+	ArrayList<Accessoire> objetsEnVente;
+	
+	public BoutiqueAccessoire(ArrayList<Accessoire> objetEnVente){
+		this.objetsEnVente=objetEnVente;
+	}
+	
+	public boolean acheterObjet(Utilisateur u,Accessoire objet){
+		if(objetsEnVente.contains(objet)){
+			if(u.getArgent()<objet.getValeurMonetaire()){
+				u.getAccessoires().add(objet);
+				u.setArgent(u.getArgent()-objet.getValeurMonetaire());
+				return true;
+			}
+			else
+				return false;
+		}
+		else
+			return false;
+		
+	}
+	
+	public boolean addObjet(Accessoire objet){
+		this.getObjetsEnVente().add(objet);
+		return true;
+	}
+
+	protected ArrayList<Accessoire> getObjetsEnVente() {
+		return objetsEnVente;
+	}
+
+	protected void setObjetsEnVente(ArrayList<Accessoire> objetsEnVente) {
+		this.objetsEnVente = objetsEnVente;
+	}
+	
+}
