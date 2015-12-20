@@ -1,0 +1,35 @@
+package pokemon;
+
+import java.awt.Container;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+
+public class InterfaceCreeCompte extends JFrame {
+	
+	protected JFrame frame;
+	
+	
+	public InterfaceCreeCompte(){
+		this.frame=makeFrame();
+	}
+	
+	protected JFrame makeFrame() {
+
+		JFrame newFrame = new JFrame("Création de compte");
+		InterfaceAcceuil.normalizeFrame(newFrame, 200);
+		JTextField login = new JTextField("Login");
+		JTextField motDePasse = new JTextField("Mot de passe");
+		login.setSize(250,100);
+		motDePasse.setSize(250, 10);
+		Container contentPane = newFrame.getContentPane();
+		contentPane.setSize(100, 100);
+		contentPane.setLayout(new GridLayout(2,1));
+		contentPane.add(login);
+		contentPane.add(motDePasse);
+		return newFrame;
+	}
+
+}
