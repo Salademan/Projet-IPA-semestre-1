@@ -1,0 +1,25 @@
+package pokemon;
+
+public class PotionDeSoin extends Accessoire{
+	
+	int soin;
+
+	public PotionDeSoin(int valeur, int soin) {
+		super(valeur, true, false);
+		this.soin=soin;
+	}
+
+	@Override
+	public void effet(Pokemon p) {
+		p.setHp(p.getHp()+soin);
+	}
+
+	protected int getSoin() {
+		return soin;
+	}
+
+	protected void setSoin(int soin) {
+		this.soin = soin;
+	}
+
+}
