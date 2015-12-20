@@ -1,0 +1,19 @@
+package pokemon;
+
+public class Boost extends Accessoire {
+
+	int valeurBoost;
+
+	public Boost(int valeur, int valeurBoost) {
+		super(valeur, true, true);
+		this.valeurBoost=valeurBoost;
+	}
+
+	@Override
+	public void effet(Pokemon p) {
+		
+		
+	}
+	
+
+}
